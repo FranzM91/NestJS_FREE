@@ -10,11 +10,13 @@ export class Noteshare {
     @Column()
     role: number;
 
-    @Column()
-    note: number;
+    @ManyToOne(() => Note, data => data.id)
+    @JoinColumn({name: 'note_id'})   
+    note: Note;
 
-    @Column()
-    usuario: number;
+    @ManyToOne(() => Usuario, data => data.id)
+    @JoinColumn({name: 'usuario_id'})
+    usuario: Usuario;
 
     @CreateDateColumn()
     created_at: Date;
