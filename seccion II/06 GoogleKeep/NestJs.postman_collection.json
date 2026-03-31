@@ -251,6 +251,82 @@
               "response": []
             }
           ]
+        },
+        ,
+        {
+          "name": "attachment",
+          "item": [
+            {
+              "name": "upload",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "uuid": "164e274a-0275-462d-8756-907b44f7f686",
+                      "src": "/C:/Users/mifer/Downloads/QTI - Sport.png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/attachment/upload/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "attachment",
+                    "upload",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "getall",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/attachment",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "attachment"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
         }
       ]
     }
