@@ -8,6 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 /***
+ * CORS configuration
+ */
+// enable allowAnyOrigin, allowAnyMethod, allowAnyHeader
+builder.Services.AddCors(options =>
+{
+    // TODO: FM implementar esta configuracion
+    options.AddPolicy("AllowAnyOrigin", builder =>
+    {
+        builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+/***
  * JWT Authentication configuration
  */
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -27,6 +41,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 var app = builder.Build();
+
+// TODO: Cors AllowAnyOrigin
+app.UseCors("AllowAnyOrigin");
 
 // Configure the HTTP request pipeline.
 
